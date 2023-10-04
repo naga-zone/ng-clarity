@@ -68,7 +68,7 @@ export default {
 const ComboboxTemplate: StoryFn = args => ({
   template: `
     <clr-combobox-container>
-      <label>{{label}}</label>
+      <label>{{ label }}</label>
       <clr-combobox
         [id]="id"
         [clrMulti]="clrMulti"
@@ -81,10 +81,12 @@ const ComboboxTemplate: StoryFn = args => ({
         name="combo"
       >
         <ng-container *clrOptionSelected="let selected">
-          {{selected}}
+          {{ selected }}
         </ng-container>
         <clr-options>
-          <clr-option *clrOptionItems="let element of elements; let i = index" [clrValue]="element.symbol">{{element.name}}</clr-option>
+          <clr-option *clrOptionItems="let element of elements; let i = index" [clrValue]="element.symbol">
+            {{ element.name }}
+          </clr-option>
         </clr-options>
       </clr-combobox>
     </clr-combobox-container>

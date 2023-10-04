@@ -51,26 +51,23 @@ export default {
 
 const ButtonGroupTemplate: StoryFn = args => ({
   template: `
-        <div style="margin-top: 200px; text-align: center;">
-          <clr-button-group [clrMenuPosition]="clrMenuPosition" [clrToggleButtonAriaLabel]="clrToggleButtonAriaLabel">
-            <clr-button
-              *ngFor="let _ of createArray(buttonCount); let i = index"
-              [clrInMenu]="false"
-              [clrLoading]="loading"
-              [disabled]="disabledButtonsPosition.includes(i+1)"
-            >
-              <cds-icon shape="home"></cds-icon>
-              {{content}} {{i + 1}}
-            </clr-button>
-            <clr-button
-              *ngFor="let _ of createArray(inMenuButtonCount); let i = index"
-              [clrInMenu]="true"
-            >
-              {{content}} {{buttonCount + i + 1}}
-            </clr-button>
-          </clr-button-group>
-        </div>
-      `,
+    <div style="margin-top: 200px; text-align: center">
+      <clr-button-group [clrMenuPosition]="clrMenuPosition" [clrToggleButtonAriaLabel]="clrToggleButtonAriaLabel">
+        <clr-button
+          *ngFor="let _ of createArray(buttonCount); let i = index"
+          [clrInMenu]="false"
+          [clrLoading]="loading"
+          [disabled]="disabledButtonsPosition.includes(i + 1)"
+        >
+          <cds-icon shape="home"></cds-icon>
+          {{ content }} {{ i + 1 }}
+        </clr-button>
+        <clr-button *ngFor="let _ of createArray(inMenuButtonCount); let i = index" [clrInMenu]="true">
+          {{ content }} {{ buttonCount + i + 1 }}
+        </clr-button>
+      </clr-button-group>
+    </div>
+  `,
   props: args,
 });
 

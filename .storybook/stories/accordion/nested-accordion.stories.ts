@@ -39,7 +39,7 @@ export const Closed: Story = args => ({
         *ngFor="let _ of createArray(panelCount); let i = index"
         [clrAccordionPanelOpen]="openIndex === i"
       >
-        <clr-accordion-title>Parent Title {{i + 1}}</clr-accordion-title>
+        <clr-accordion-title>Parent Title {{ i + 1 }}</clr-accordion-title>
         <clr-accordion-content>
           <clr-accordion>
             <clr-accordion-panel [clrAccordionPanelOpen]="nestedOpenIndex === i">

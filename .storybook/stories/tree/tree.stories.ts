@@ -13,9 +13,7 @@ import { setupStorybook } from '../../helpers/setup-storybook.helpers';
 
 const defaultStory: Story = args => ({
   template: `
-    <clr-tree>
-      ${getFileTreeNodeMarkup(filesRoot)}
-    </clr-tree>
+    <clr-tree>${getFileTreeNodeMarkup(filesRoot)}</clr-tree>
   `,
   props: { ...args },
 });
