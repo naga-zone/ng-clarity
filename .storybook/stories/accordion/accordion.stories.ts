@@ -35,7 +35,8 @@ export default {
   },
 };
 
-const template = `
+export const Initial: Story = args => ({
+  template: `
     <clr-accordion [clrAccordionMultiPanel]="clrAccordionMultiPanel">
       <clr-accordion-panel
         *ngFor="let _ of createArray(panelCount); let i = index"
@@ -45,10 +46,7 @@ const template = `
         <clr-accordion-content>{{content}} {{i + 1}}</clr-accordion-content>
       </clr-accordion-panel>
     </clr-accordion>
-  `;
-
-export const Initial: Story = args => ({
-  template,
+  `,
   props: args,
 });
 

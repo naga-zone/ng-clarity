@@ -10,19 +10,6 @@ import { moduleMetadata, Story } from '@storybook/angular';
 
 import { CommonModules } from '../../helpers/common';
 
-const template = `
-    <clr-accordion>
-      <clr-accordion-panel
-        [clrAccordionPanelOpen]="clrAccordionPanelOpen"
-        [clrAccordionPanelDisabled]="clrAccordionPanelDisabled"
-        (clrAccordionPanelOpenChange)="clrAccordionPanelOpenChange($event)"
-      >
-        <clr-accordion-title>{{ title }}</clr-accordion-title>
-        <clr-accordion-content>{{ content }}</clr-accordion-content>
-      </clr-accordion-panel>
-    </clr-accordion>
-  `;
-
 export default {
   title: 'Accordion/Accordion Panel',
   component: ClrAccordionPanel,
@@ -55,7 +42,18 @@ export default {
 };
 
 export const PanelClosed: Story = args => ({
-  template,
+  template: `
+    <clr-accordion>
+      <clr-accordion-panel
+        [clrAccordionPanelOpen]="clrAccordionPanelOpen"
+        [clrAccordionPanelDisabled]="clrAccordionPanelDisabled"
+        (clrAccordionPanelOpenChange)="clrAccordionPanelOpenChange($event)"
+      >
+        <clr-accordion-title>{{ title }}</clr-accordion-title>
+        <clr-accordion-content>{{ content }}</clr-accordion-content>
+      </clr-accordion-panel>
+    </clr-accordion>
+  `,
   props: args,
 });
 

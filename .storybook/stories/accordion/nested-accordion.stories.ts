@@ -32,7 +32,8 @@ export default {
   },
 };
 
-const template = `
+export const Closed: Story = args => ({
+  template: `
     <clr-accordion>
       <clr-accordion-panel
         *ngFor="let _ of createArray(panelCount); let i = index"
@@ -49,10 +50,7 @@ const template = `
         </clr-accordion-content>
       </clr-accordion-panel>
     </clr-accordion>
-  `;
-
-export const Closed: Story = args => ({
-  template,
+  `,
   props: args,
 });
 
